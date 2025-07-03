@@ -1,5 +1,9 @@
-sap.ui.define([], () => {
-    "use strict";
+sap.ui.define([
+	"sap/ui/core/mvc/XMLView"
+], (XMLView) => {
+	"use strict";
 
-    alert("UI5 is ready");
+	XMLView.create({
+		viewName: "ui5.todo-list.view.App"
+	}).then((oView) => oView.placeAt("content"));
 });
