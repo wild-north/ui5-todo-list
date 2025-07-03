@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "todo list app",
   "scripts": {
-    "start": "ui5 serve -o index.html"
+    "start": "ui5 serve -o index.html",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
   },
   "devDependencies": {
-    "@ui5/cli": "^4.0.19"
+    "@ui5/cli": "^4.0.19",
+    "prettier": "^3.6.2"
   }
 }

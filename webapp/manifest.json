@@ -31,9 +31,7 @@
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
           "bundleName": "ui5.todo-list.i18n.i18n",
-          "supportedLocales": [
-            ""
-          ],
+          "supportedLocales": [""],
           "fallbackLocale": ""
         }
       }
