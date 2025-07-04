@@ -1,5 +1,4 @@
 {
-  // Global settings for format on save
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
@@ -7,21 +6,17 @@
     "source.organizeImports": "explicit"
   },
 
-  // ESLint 9 flat config support
   "eslint.useFlatConfig": true,
-  "eslint.experimental.useFlatConfig": true,
+
   "eslint.workingDirectories": ["."],
 
-  // Ensure ESLint runs on JavaScript files
   "eslint.validate": ["javascript", "javascriptreact"],
 
-  // UI5 specific settings
   "files.associations": {
     "*.controller.js": "javascript",
     "*.view.xml": "xml"
   },
 
-  // Language-specific settings
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
