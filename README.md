@@ -16,6 +16,35 @@ This project uses ESLint 9.30+ with the new flat configuration system:
 - **Format**: ESM modules with flat config array
 - **Features**: Modern JavaScript rules, UI5-specific adjustments, Prettier integration
 
+### Git Hooks
+
+#### Pre-push Hook
+
+The project includes a **pre-push git hook** that automatically runs code quality checks before allowing push to the repository:
+
+**What it checks:**
+
+- 🔍 **ESLint rules** - ensures code follows linting standards
+- 🎨 **Prettier formatting** - ensures consistent code formatting
+
+**How it works:**
+
+- Runs automatically on every `git push`
+- Blocks push if any issues are found
+- Shows clear error messages and suggestions for fixes
+- Can be bypassed with `git push --no-verify` if needed
+
+**Example output:**
+
+```bash
+🔍 Running code quality checks before push...
+📋 Checking ESLint rules...
+✅ ESLint checks passed
+🎨 Checking Prettier formatting...
+✅ Prettier checks passed
+🎉 All code quality checks passed! Proceeding with push...
+```
+
 ### Available Scripts
 
 ```bash
