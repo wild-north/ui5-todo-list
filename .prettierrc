@@ -6,5 +6,18 @@
   "tabWidth": 2,
   "useTabs": false,
   "bracketSpacing": true,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+  "plugins": ["@prettier/plugin-xml"],
+  "overrides": [
+    {
+      "files": ["*.xml"],
+      "options": {
+        "printWidth": 120,
+        "tabWidth": 3,
+        "xmlWhitespaceSensitivity": "ignore",
+        "xmlSelfClosingSpace": true,
+        "xmlSortAttributesByKey": false
+      }
+    }
+  ]
 }
