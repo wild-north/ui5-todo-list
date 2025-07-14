@@ -12,9 +12,9 @@
     {
       "files": ["*.xml"],
       "options": {
-        "printWidth": 120,
+        "printWidth": 70,
         "tabWidth": 3,
-        "xmlWhitespaceSensitivity": "ignore",
+        "xmlWhitespaceSensitivity": "strict",
         "xmlSelfClosingSpace": true,
         "xmlSortAttributesByKey": false
       }
