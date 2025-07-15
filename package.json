@@ -23,6 +23,7 @@
     "eslint-config-prettier": "^10.1.5",
     "globals": "^16.3.0",
     "prettier": "^3.6.2",
-    "ui5-middleware-livereload": "^3.1.1"
+    "ui5-middleware-livereload": "^3.1.1",
+    "ui5-middleware-simpleproxy": "^3.4.3"
   }
 }

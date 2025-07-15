@@ -1,8 +1,8 @@
 sap.ui.define(['sap/ui/core/ComponentContainer'], ComponentContainer => {
   new ComponentContainer({
-    name: 'ui5.todo-list',
+    name: 'ui5.walkthrough',
     settings: {
-      id: 'todo-list',
+      id: 'walkthrough',
     },
     async: true,
   }).placeAt('content');

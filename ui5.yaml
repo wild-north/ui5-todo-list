@@ -1,6 +1,6 @@
 specVersion: '4.0'
 metadata:
-  name: todo.list
+  name: walktrough
 type: application
 framework:
   name: OpenUI5
@@ -15,4 +15,9 @@ server:
       afterMiddleware: compression
       configuration:
         port: 35729
-        watchPath: "webapp"
+        watchPath: 'webapp'
+    - name: ui5-middleware-simpleproxy
+      afterMiddleware: compression
+      mountPath: /V2
+      configuration:
+        baseUri: 'https://services.odata.org'

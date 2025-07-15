@@ -1,5 +1,5 @@
 <mvc:View
-   controllerName="ui5.todo-list.controller.HelloPanel"
+   controllerName="ui5.walkthrough.controller.HelloPanel"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
 >
@@ -9,6 +9,13 @@
       width="auto"
    >
       <content>
+      <Button
+            id="helloDialogButton"
+            icon="sap-icon://world"
+            text="{i18n>openDialogButtonText}"
+            press=".onOpenDialog"
+            class="sapUiSmallMarginEnd"
+         />
          <Button
             text="{i18n>showHelloButtonText}"
             press=".onShowHello"
