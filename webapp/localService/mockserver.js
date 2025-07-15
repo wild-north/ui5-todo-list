@@ -1,6 +1,8 @@
 sap.ui.define(['sap/ui/core/util/MockServer'], MockServer => {
   'use strict';
 
+  const DEFAULT_DELAY_MS = 500;
+
   return {
     init() {
       // create
@@ -13,7 +15,7 @@ sap.ui.define(['sap/ui/core/util/MockServer'], MockServer => {
       // configure mock server with a delay
       MockServer.config({
         autoRespond: true,
-        autoRespondAfter: oUrlParams.get('serverDelay') || 500,
+        autoRespondAfter: oUrlParams.get('serverDelay') || DEFAULT_DELAY_MS,
       });
 
       // simulate
