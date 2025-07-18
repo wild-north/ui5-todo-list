@@ -22,41 +22,41 @@
         ]
       }"
    >
-    <headerToolbar>
-        <Toolbar>
-            <Title text="{i18n>invoiceListTitle}" />
-            <ToolbarSpacer />
-            <SearchField width="50%" search=".onFilterInvoices" />
-        </Toolbar>
-    </headerToolbar>
+        <headerToolbar>
+            <Toolbar>
+                <Title text="{i18n>invoiceListTitle}" />
+                <ToolbarSpacer />
+                <SearchField width="50%" search=".onFilterInvoices" />
+            </Toolbar>
+        </headerToolbar>
         <items>
             <ObjectListItem
             core:require="{
-                    Currency: 'sap/ui/model/type/Currency'
-                }"
+                        Currency: 'sap/ui/model/type/Currency'
+                    }"
             title="{invoice>Quantity} x {invoice>ProductName}"
             number="{
-                    parts: [
-                        'invoice>ExtendedPrice',
-                        'view>/currency'
-                    ],
-                    type: 'Currency',
-                    formatOptions: {
-                        showMeasure: false
-                    }
-                }"
+                        parts: [
+                            'invoice>ExtendedPrice',
+                            'view>/currency'
+                        ],
+                        type: 'Currency',
+                        formatOptions: {
+                            showMeasure: false
+                        }
+                    }"
             numberUnit="{view>/currency}"
             numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
          >
                 <firstStatus>
                     <ObjectStatus
                   core:require="{
-                            Formatter: 'ui5/walkthrough/model/formatter'
-                        }"
+                                    Formatter: 'ui5/walkthrough/model/formatter'
+                                }"
                   text="{
-                            path: 'invoice>Status',
-                            formatter: 'Formatter.statusText.bind($controller)'
-                        }"
+                                    path: 'invoice>Status',
+                                    formatter: 'Formatter.statusText.bind($controller)'
+                                }"
                />
                 </firstStatus>
             </ObjectListItem>

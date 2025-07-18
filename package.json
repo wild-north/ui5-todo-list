@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "todo list app",
   "scripts": {
-    "start": "ui5 serve -o test/mockServer.html",
+    "start": "ui5 serve -o index.html",
+    "start:mock": "ui5 serve -o test/mockServer.html",
+    "test": "ui5 serve -o test/testsuite.qunit.html",
     "prettier": "prettier --check webapp/",
     "prettier:fix": "prettier --write webapp/",
     "lint": "eslint webapp/",
