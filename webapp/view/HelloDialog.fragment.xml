@@ -1,7 +1,16 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
-   <Dialog id="helloDialog" title="Hello {/recipient/name}">
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+>
+   <Dialog
+      id="helloDialog"
+      title="Hello {/recipient/name}"
+   >
       <content>
-         <VBox class="sapUiMediumMargin" alignItems="Center">
+         <VBox
+            class="sapUiMediumMargin"
+            alignItems="Center"
+         >
             <core:Icon
                src="sap-icon://hello-world"
                size="8rem"
