@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "module": "amd",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "rootDir": "webapp",
+    "outDir": "webapp",
+    "baseUrl": "./",
+    "paths": {
+      "ui5/todo/*": ["webapp/*"]
+    }
+  },
+  "include": ["webapp/**/*.ts"],
+  "exclude": ["webapp/**/*.js", "node_modules"]
+}

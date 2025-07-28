@@ -1,0 +1,190 @@
+<mvc:View
+   controllerName="ui5.todo.controller.Main"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   displayBlock="true"
+>
+   <SplitApp
+      id="splitApp"
+      masterButtonText="Menu"
+   >
+      <masterPages>
+         <Page
+            id="masterPage"
+            title="{i18n>todoGroupsTitle}"
+            class="sapUiContentPadding"
+         >
+            <content>
+               <List
+                  id="groupsList"
+                  mode="SingleSelectMaster"
+                  selectionChange=".onGroupSelect"
+               >
+                  <StandardListItem
+                     title="{i18n>allTasksTitle}"
+                     icon="sap-icon://task"
+                     type="Active"
+                  >
+                     <customData>
+                        <core:CustomData
+                           xmlns:core="sap.ui.core"
+                           key="groupId"
+                           value="all"
+                        />
+                     </customData>
+                  </StandardListItem>
+
+                  <StandardListItem
+                     title="{i18n>defaultGroupTitle}"
+                     icon="sap-icon://circle-task-2"
+                     type="Active"
+                  >
+                     <customData>
+                        <core:CustomData
+                           xmlns:core="sap.ui.core"
+                           key="groupId"
+                           value="default"
+                        />
+                     </customData>
+                  </StandardListItem>
+
+                  <StandardListItem
+                     title="{i18n>activeTasksTitle}"
+                     icon="sap-icon://activity-individual"
+                     type="Active"
+                  >
+                     <customData>
+                        <core:CustomData
+                           xmlns:core="sap.ui.core"
+                           key="groupId"
+                           value="active"
+                        />
+                     </customData>
+                  </StandardListItem>
+
+                  <StandardListItem
+                     title="{i18n>completedTasksTitle}"
+                     icon="sap-icon://task"
+                     type="Active"
+                  >
+                     <customData>
+                        <core:CustomData
+                           xmlns:core="sap.ui.core"
+                           key="groupId"
+                           value="completed"
+                        />
+                     </customData>
+                  </StandardListItem>
+               </List>
+            </content>
+         </Page>
+      </masterPages>
+
+      <detailPages>
+         <Page
+            id="detailPage"
+            title="{i18n>pageTitle}"
+            showNavButton="{device>/system/phone}"
+            navButtonPress=".onNavBack"
+         >
+            <customHeader>
+               <Toolbar>
+                  <Title
+                     text="{i18n>appTitle}"
+                     level="H2"
+                  />
+                  <ToolbarSpacer />
+                  <Button
+                     id="createTaskBtn"
+                     text="{i18n>createTaskButton}"
+                     icon="sap-icon://add"
+                     type="Emphasized"
+                     press=".onCreateTask"
+                  />
+               </Toolbar>
+            </customHeader>
+
+            <content>
+               <VBox class="sapUiMediumMargin">
+                  <SearchField
+                     id="todoSearch"
+                     placeholder="{i18n>searchPlaceholder}"
+                     width="100%"
+                     search=".onSearchTodos"
+                     class="sapUiMediumMarginBottom"
+                  />
+
+                  <List
+                     id="todoList"
+                     items="{
+                        path: 'todos>/filteredTodos',
+                        templateShareable: false
+                     }"
+                     noDataText="{i18n>todoNoTasksMessage}"
+                     mode="SingleSelect"
+                     class="sapUiResponsiveMargin"
+                  >
+                     <CustomListItem
+                        press=".onTodoPress"
+                        class="todoListItem"
+                     >
+                        <content>
+                           <HBox
+                              alignItems="Center"
+                              justifyContent="SpaceBetween"
+                              width="100%"
+                           >
+                              <VBox class="sapUiMediumMarginEnd">
+                                 <HBox alignItems="Center">
+                                    <CheckBox
+                                       selected="{
+                                          path: 'todos>status',
+                                          formatter: '.formatCompleted'
+                                       }"
+                                       select=".onToggleComplete"
+                                       class="sapUiTinyMarginEnd"
+                                    />
+                                    <Title
+                                       text="{todos>title}"
+                                       level="H4"
+                                       class="{
+                                          path: 'todos>status',
+                                          formatter: '.formatTitleClass'
+                                       }"
+                                    />
+                                 </HBox>
+                                 <Text
+                                    text="{todos>description}"
+                                    class="sapUiTinyMarginTop todoDescription"
+                                 />
+                                 <Text
+                                    text="{
+                                       path: 'todos>createdAt',
+                                       formatter: '.formatDate'
+                                    }"
+                                    class="sapUiTinyMarginTop todoMeta"
+                                 />
+                              </VBox>
+
+                              <VBox alignItems="End">
+                                 <ObjectStatus
+                                    text="{
+                                       path: 'todos>status',
+                                       formatter: '.formatStatus'
+                                    }"
+                                    state="{
+                                       path: 'todos>status',
+                                       formatter: '.formatStatusState'
+                                    }"
+                                 />
+                              </VBox>
+                           </HBox>
+                        </content>
+                     </CustomListItem>
+                  </List>
+               </VBox>
+            </content>
+         </Page>
+      </detailPages>
+   </SplitApp>
+</mvc:View>

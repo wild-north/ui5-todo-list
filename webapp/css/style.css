@@ -18,3 +18,81 @@ html[dir='rtl'] .myAppDemoWT .myCustomButton.sapMBtn {
 .myAppDemoWTProductRating .sapMRI {
   vertical-align: initial;
 }
+
+.todoApp {
+  height: 100vh;
+}
+
+.todoListItem {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1rem;
+}
+
+.todoListItem:hover {
+  background-color: #f8f9fa;
+}
+
+.todoCompletedTitle {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todoDescription {
+  color: #6c757d;
+  font-size: 0.875rem;
+  max-width: 400px;
+  word-wrap: break-word;
+}
+
+.todoMeta {
+  color: #adb5bd;
+  font-size: 0.75rem;
+}
+
+.sapMSplitApp .sapMSplitAppMaster {
+  border-right: 1px solid #e5e5e5;
+  background: #fafafa;
+}
+
+.sapMSplitApp .sapMSplitAppDetail {
+  background: #fff;
+}
+
+.sapMToolbar {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.sapMList .sapMListItem {
+  padding: 0.75rem 1rem;
+}
+
+.sapMList .sapMListItem:hover {
+  background-color: #f8f9fa;
+}
+
+.sapMSearchField {
+  background: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+}
+
+.sapMList {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.375rem;
+}
+
+.sapMListNoData {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+}
+
+#masterPage .sapMPageContent {
+  padding: 0;
+}
+
+#detailPage .sapMPageContent {
+  background: #f8f9fa;
+}

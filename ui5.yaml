@@ -1,23 +1,15 @@
 specVersion: '4.0'
 metadata:
-  name: walktrough
+  name: todo-list
 type: application
 framework:
   name: OpenUI5
-  version: '1.136.1'
+  version: '1.138.0'
   libraries:
-    - name: sap.m
     - name: sap.ui.core
     - name: themelib_sap_horizon
+    - name: sap.m
 server:
   customMiddleware:
     - name: ui5-middleware-livereload
       afterMiddleware: compression
-      configuration:
-        port: 35729
-        watchPath: 'webapp'
-    - name: ui5-middleware-simpleproxy
-      afterMiddleware: compression
-      mountPath: /V2
-      configuration:
-        baseUri: 'https://services.odata.org'

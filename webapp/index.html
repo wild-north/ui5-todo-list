@@ -7,7 +7,7 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>UI5 Walkthrough app</title>
+    <title>Todo List App</title>
     <script
       id="sap-ui-bootstrap"
       src="resources/sap-ui-core.js"
@@ -15,9 +15,10 @@
       data-sap-ui-libs="sap.m"
       data-sap-ui-compat-version="edge"
       data-sap-ui-async="true"
+      data-sap-ui-esModules="true"
       data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
       data-sap-ui-resource-roots='{
-        "ui5.walkthrough": "./"
+        "ui5.todo": "./"
 		  }'
     ></script>
     <script src="http://localhost:35729/livereload.js"></script>
@@ -25,9 +26,9 @@
   <body class="sapUiBody" id="content">
     <div
       data-sap-ui-component
-      data-name="ui5.walkthrough"
+      data-name="ui5.todo"
       data-id="container"
-      data-settings='{"id" : "walkthrough"}'
+      data-settings='{"id" : "todo"}'
     ></div>
   </body>
 </html>

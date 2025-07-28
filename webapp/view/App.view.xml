@@ -1,12 +1,12 @@
 <mvc:View
-   controllerName="ui5.walkthrough.controller.App"
+   controllerName="ui5.todo.controller.App"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
    displayBlock="true"
 >
    <Shell>
       <App
-         class="myAppDemoWT"
+         class="todoApp"
          id="app"
       />
    </Shell>
