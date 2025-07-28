@@ -9,7 +9,9 @@
     "prettier": "prettier --check webapp/",
     "prettier:fix": "prettier --write webapp/",
     "lint": "eslint webapp/",
-    "lint:fix": "eslint webapp/ --fix"
+    "lint:fix": "eslint webapp/ --fix",
+    "build": "ui5 build --all --clean-dest",
+    "serve-dist": "ws --compress -d dist --open"
   },
   "ui5": {
     "dependencies": [
@@ -24,6 +26,7 @@
     "eslint": "^9.30.1",
     "eslint-config-prettier": "^10.1.5",
     "globals": "^16.3.0",
+    "local-web-server": "^5.4.0",
     "prettier": "^3.6.2",
     "ui5-middleware-livereload": "^3.1.1",
     "ui5-middleware-simpleproxy": "^3.4.3"

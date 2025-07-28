@@ -12,11 +12,13 @@
     {
       "files": ["*.xml"],
       "options": {
-        "printWidth": 70,
+        "printWidth": 120,
         "tabWidth": 3,
-        "xmlWhitespaceSensitivity": "strict",
+        "xmlWhitespaceSensitivity": "ignore",
         "xmlSelfClosingSpace": true,
-        "xmlSortAttributesByKey": false
+        "xmlSortAttributesByKey": false,
+        "singleAttributePerLine": true,
+        "bracketSameLine": false
       }
     }
   ]

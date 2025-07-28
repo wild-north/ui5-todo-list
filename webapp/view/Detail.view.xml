@@ -5,12 +5,12 @@
    xmlns:mvc="sap.ui.core.mvc"
    xmlns:wt="ui5.walkthrough.control"
 >
-	<Page
+   <Page
       title="{i18n>detailPageTitle}"
       showNavButton="true"
       navButtonPress=".onNavBack"
    >
-		<ObjectHeader
+      <ObjectHeader
          intro="{invoice>ShipperName}"
          title="{invoice>ProductName}"
          core:require="{
@@ -56,5 +56,5 @@
          class="sapUiSmallMarginBeginEnd"
          change=".onRatingChange"
       />
-	</Page>
+   </Page>
 </mvc:View>
