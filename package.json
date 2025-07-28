@@ -4,10 +4,14 @@
   "description": "todo list app",
   "scripts": {
     "start": "ui5 serve -o index.html",
+    "start:mock": "ui5 serve -o test/mockServer.html",
+    "test": "ui5 serve -o test/testsuite.qunit.html",
     "prettier": "prettier --check webapp/",
     "prettier:fix": "prettier --write webapp/",
     "lint": "eslint webapp/",
-    "lint:fix": "eslint webapp/ --fix"
+    "lint:fix": "eslint webapp/ --fix",
+    "build": "ui5 build --all --clean-dest",
+    "serve-dist": "ws --compress -d dist --open"
   },
   "ui5": {
     "dependencies": [
@@ -17,11 +21,14 @@
   "devDependencies": {
     "@eslint/config-helpers": "^0.3.0",
     "@eslint/js": "^9.30.1",
+    "@prettier/plugin-xml": "^3.4.1",
     "@ui5/cli": "^4.0.19",
     "eslint": "^9.30.1",
     "eslint-config-prettier": "^10.1.5",
     "globals": "^16.3.0",
+    "local-web-server": "^5.4.0",
     "prettier": "^3.6.2",
-    "ui5-middleware-livereload": "^3.1.1"
+    "ui5-middleware-livereload": "^3.1.1",
+    "ui5-middleware-simpleproxy": "^3.4.3"
   }
 }
