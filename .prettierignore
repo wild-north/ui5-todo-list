@@ -3,4 +3,5 @@ dist/
 coverage/
 build/
 .DS_Store
+*.js
 *.ts

@@ -1,11 +1,9 @@
-sap.ui.define([
-  "sap/ui/core/mvc/Controller"
-], (Controller: any) => {
-  "use strict";
+import Controller from "sap/ui/core/mvc/Controller";
+import Component from "ui5/todo/Component";
 
-  return Controller.extend("ui5.todo.controller.App", {
-    onInit(): void {
-      this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
-    }
-  });
-}); 
+export default class AppController extends Controller {
+  
+  public onInit(): void {
+    this.getView()?.addStyleClass((this.getOwnerComponent() as Component).getContentDensityClass());
+  }
+} 

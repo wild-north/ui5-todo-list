@@ -1,54 +1,50 @@
-sap.ui.define([
-  "sap/ui/core/UIComponent",
-  "sap/ui/model/json/JSONModel",
-  "sap/ui/Device"
-], (UIComponent: any, JSONModel: any, Device: any) => {
-  "use strict";
+import UIComponent from "sap/ui/core/UIComponent";
+import Device from "sap/ui/Device";
+import JSONModel from "sap/ui/model/json/JSONModel";
 
-  return UIComponent.extend("ui5.todo.Component", {
-    metadata: {
-      interfaces: ["sap.ui.core.IAsyncContentCreation"],
-      manifest: "json"
-    },
+export default class Component extends UIComponent {
+  public static readonly metadata = {
+    interfaces: ["sap.ui.core.IAsyncContentCreation"],
+    manifest: "json"
+  };
 
-    init(): void {
-      UIComponent.prototype.init.apply(this, arguments);
+  public init(): void {
+    super.init();
 
-      const todoData = {
-        groups: [
-          {
-            id: "default",
-            title: "My Tasks",
-            color: "blue"
-          }
-        ],
-        todos: [
-          {
-            id: "1",
-            title: "Welcome to Todo List",
-            description: "This is your first todo item. Click to edit or create new ones!",
-            status: "todo",
-            groupId: "default",
-            createdAt: new Date().toISOString(),
-            dueDate: null
-          }
-        ]
-      };
+    const todoData = {
+      groups: [
+        {
+          id: "default",
+          title: "My Tasks",
+          color: "blue"
+        }
+      ],
+      todos: [
+        {
+          id: "1",
+          title: "Welcome to Todo List",
+          description: "This is your first todo item. Click to edit or create new ones!",
+          status: "todo",
+          groupId: "default",
+          createdAt: new Date().toISOString(),
+          dueDate: null
+        }
+      ]
+    };
 
-      const todoModel = new JSONModel(todoData);
+    const todoModel = new JSONModel(todoData);
 
-      this.setModel(todoModel, "todos");
+    this.setModel(todoModel, "todos");
 
-      const deviceModel = new JSONModel(Device);
+    const deviceModel = new JSONModel(Device);
 
-      deviceModel.setDefaultBindingMode("OneWay");
-      this.setModel(deviceModel, "device");
+    deviceModel.setDefaultBindingMode("OneWay");
+    this.setModel(deviceModel, "device");
 
-      this.getRouter().initialize();
-    },
+    this.getRouter().initialize();
+  }
 
-    getContentDensityClass(): string {
-      return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
-    }
-  });
-}); 
+  public getContentDensityClass(): string {
+    return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
+  }
+} 
