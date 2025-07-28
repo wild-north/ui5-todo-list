@@ -79,7 +79,7 @@ sap.ui.define(
         this.getAggregation('_label').setDesign('Bold');
       },
 
-      _onSubmit(oEvent) {
+      _onSubmit() {
         const oResourceBundle = this.getModel('i18n').getResourceBundle();
 
         this.getAggregation('_rating').setEnabled(false);
