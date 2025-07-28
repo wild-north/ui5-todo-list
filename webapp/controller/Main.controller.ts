@@ -6,6 +6,12 @@ sap.ui.define([
 ], (Controller: any, JSONModel: any, UIComponent: any, _SplitApp: any) => {
   "use strict";
 
+  const MILLISECONDS_IN_SECOND = 1000;
+  const SECONDS_IN_MINUTE = 60;
+  const MINUTES_IN_HOUR = 60;
+  const HOURS_IN_DAY = 24;
+  const DAYS_IN_WEEK = 7;
+
   return Controller.extend("ui5.todo.controller.Main", {
     
     onInit(): void {
@@ -81,6 +87,7 @@ sap.ui.define([
     },
 
     onCreateTask(): void {
+      // eslint-disable-next-line no-console
       console.log("Create task button clicked");
     },
 
@@ -122,6 +129,7 @@ sap.ui.define([
       const bindingContext = item?.getBindingContext("todos");
       const todo = bindingContext?.getObject();
       
+      // eslint-disable-next-line no-console
       console.log("Todo item clicked:", todo);
     },
 
@@ -135,7 +143,7 @@ sap.ui.define([
       if (todo && path) {
         const newStatus = todo.status === "done" ? "todo" : "done";
 
-        model.setProperty(`${path  }/status`, newStatus);
+        model.setProperty(`${path}/status`, newStatus);
         
         this.filterTodosByGroup(model.getProperty("/selectedGroupId"));
       }
@@ -183,16 +191,17 @@ sap.ui.define([
       const date = new Date(dateString);
       const now = new Date();
       const diffTime = Math.abs(now.getTime() - date.getTime());
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      const diffDays = Math.ceil(diffTime / (MILLISECONDS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY));
       
       if (diffDays === 1) {
         return "Yesterday";
-      } else if (diffDays < 7) {
+      }
+
+      if (diffDays < DAYS_IN_WEEK) {
         return `${diffDays} days ago`;
       }
- 
-        return date.toLocaleDateString();
-      
+
+      return date.toLocaleDateString();
     }
   });
 }); 
