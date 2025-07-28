@@ -3,17 +3,19 @@ sap.ui.define([
   "sap/ui/model/json/JSONModel",
   "sap/ui/core/UIComponent",
   "sap/m/SplitApp"
-], (Controller: any, JSONModel: any, UIComponent: any, SplitApp: any) => {
+], (Controller: any, JSONModel: any, UIComponent: any, _SplitApp: any) => {
   "use strict";
 
   return Controller.extend("ui5.todo.controller.Main", {
     
     onInit(): void {
       const router = UIComponent.getRouterFor(this);
+
       router.getRoute("main")?.attachPatternMatched(this.onRouteMatched, this);
       router.getRoute("group")?.attachPatternMatched(this.onRouteMatched, this);
 
       const model = this.getView().getModel("todos") as any;
+
       if (model) {
         model.setProperty("/filteredTodos", model.getProperty("/todos"));
         model.setProperty("/selectedGroupId", "all");
@@ -23,6 +25,7 @@ sap.ui.define([
     onRouteMatched(event: any): void {
       const args = event.getParameter("arguments");
       const groupId = args?.groupId || "all";
+
       this.filterTodosByGroup(groupId);
     },
 
@@ -62,6 +65,7 @@ sap.ui.define([
       
       if (groupId) {
         const router = UIComponent.getRouterFor(this);
+
         if (groupId === "all") {
           router.navTo("main");
         } else {
@@ -72,6 +76,7 @@ sap.ui.define([
 
     onNavBack(): void {
       const splitApp = this.byId("splitApp");
+
       splitApp.hideMaster();
     },
 
@@ -129,7 +134,8 @@ sap.ui.define([
       
       if (todo && path) {
         const newStatus = todo.status === "done" ? "todo" : "done";
-        model.setProperty(path + "/status", newStatus);
+
+        model.setProperty(`${path  }/status`, newStatus);
         
         this.filterTodosByGroup(model.getProperty("/selectedGroupId"));
       }
@@ -183,9 +189,10 @@ sap.ui.define([
         return "Yesterday";
       } else if (diffDays < 7) {
         return `${diffDays} days ago`;
-      } else {
-        return date.toLocaleDateString();
       }
+ 
+        return date.toLocaleDateString();
+      
     }
   });
 }); 

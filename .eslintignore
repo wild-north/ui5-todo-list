@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+coverage/
+*.min.js
+
+# Generated JavaScript files from TypeScript
+webapp/Component.js
+webapp/controller/App.controller.js
+webapp/controller/Main.controller.js 

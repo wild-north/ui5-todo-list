@@ -36,9 +36,11 @@ sap.ui.define([
       };
 
       const todoModel = new JSONModel(todoData);
+
       this.setModel(todoModel, "todos");
 
       const deviceModel = new JSONModel(Device);
+
       deviceModel.setDefaultBindingMode("OneWay");
       this.setModel(deviceModel, "device");
 

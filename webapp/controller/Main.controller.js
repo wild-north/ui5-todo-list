@@ -4,7 +4,7 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/UIComponent",
     "sap/m/SplitApp"
-], (Controller, JSONModel, UIComponent, SplitApp) => {
+], (Controller, JSONModel, UIComponent, _SplitApp) => {
     "use strict";
     return Controller.extend("ui5.todo.controller.Main", {
         onInit() {
@@ -107,7 +107,7 @@ sap.ui.define([
             const todo = bindingContext?.getObject();
             if (todo && path) {
                 const newStatus = todo.status === "done" ? "todo" : "done";
-                model.setProperty(path + "/status", newStatus);
+                model.setProperty(`${path}/status`, newStatus);
                 this.filterTodosByGroup(model.getProperty("/selectedGroupId"));
             }
         },
@@ -155,9 +155,7 @@ sap.ui.define([
             else if (diffDays < 7) {
                 return `${diffDays} days ago`;
             }
-            else {
-                return date.toLocaleDateString();
-            }
+            return date.toLocaleDateString();
         }
     });
 });
